@@ -1,40 +1,46 @@
 #include <iostream>
 
 using namespace std;
-
-float x, y;
+int x, y;
 int wybor;
 
-int main()
-{
-    cout<<"Podaj pierwsza liczbe: "<<endl;
+int main() {
+    cout<<"Podaj liczbe 'x':"<<endl;
     cin>>x;
-    cout<<"Podaj druga liczbe: "<<endl;
+    cout<<"Podaj liczbe 'y':"<<endl;
     cin>>y;
-    cout<<"---------------------"<<endl;
+    cout<<"Wybory:"<<endl;
     cout<<""<<endl;
-    cout<<"Wybory: "<<endl;
+    cout<<"1. Dodowanie, 2. Odejmowanie, 3. Mnozenie, 4. Dzielenie"<<endl;
     cout<<""<<endl;
-    cout<<"Mnozenie - 1"<<endl;
-    cout<<"Dzielnie - 2"<<endl;
-    cout<<""<<endl;
-    cout<<"---------------------"<<endl;
-
-
-    cout<<"Wybierz opcje: 1 lub 2"<<endl;
+    
     cin>>wybor;
-
-    if(wybor) {
-        if(wybor == 1) {
-            cout<<x * y<<endl;
+    
+    switch(wybor) {
+        case 1:
+        cout<<"Wynik z dodawania: "<<x + y<<endl;
+        break;
+        
+        case 2:
+        cout<<"Wynik z odejmowania: "<<x - y<<endl;
+        break;
+        
+        case 3:
+        cout<<"Wynik z mnozenia: "<<x * y<<endl;
+        break;
+        
+        case 4:
+        if(y == 0) {
+            cout<<"Nie mozna dzielic przez 0!"<<endl;
+            cout<<"Podaj jeszcze raz liczbe 'y':"<<endl;
+            cin>>y;
         }
-        if(wybor == 2) {
-            cout<<x / y<<endl;
-        }
-    } else {
-        cout<<"Nie ma takiego wyboru"<<endl;
+        cout<<"Wynik z dzielenia: "<<x / y<<endl;
+        break;
+        
+        default: cout<<"Nie ma takiego wyboru jak: "<<wybor<<"!!!"<<endl;
     }
-
+   
 
     return 0;
 }
