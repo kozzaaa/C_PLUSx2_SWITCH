@@ -33,6 +33,8 @@ int main()
             cin>>y;
         }
         cout<<"Wynik z dzielenia: "<<x / y<<endl;
+        break;
+    default: cout<<"Nie ma takiego wyboru jak: "<<wybor<<endl;
     }
     return 0;
 }
